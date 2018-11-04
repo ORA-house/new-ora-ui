@@ -1,0 +1,122 @@
+body {
+    height: 100vh; 
+    width: 100vw; 
+}
+
+#menu {
+    transform: scale(0.75);
+    height: 2.5vh; 
+    width: 2.5vh; 
+    padding: 10px;
+    min-height: 25px; 
+    min-width: 25px; 
+    border: none;
+    border-radius: 50px; 
+    background-color: white; 
+    margin-top: 47vh;
+    margin-left: 10px;
+    position: absolute;
+    z-index: 2;
+
+    -webkit-transition: all 1s ease;  
+    -moz-transition: all 1s ease;  
+    -o-transition: all 1s ease;  
+    -ms-transition: all 1s ease;  
+    transition: all 1s ease;
+}
+
+.menu-container { 
+    transform: scale(0);
+    height: 25vh;
+    width: 25vh;
+    z-index: 1;
+    position: absolute;
+    top: 36.5vh;
+    left: -12.5vh;
+    border-radius: 100%;
+
+    -webkit-transition: all 1s ease;  
+    -moz-transition: all 1s ease;  
+    -o-transition: all 1s ease;  
+    -ms-transition: all 1s ease;  
+    transition: all 1s ease;
+}
+
+#menu.active {
+    transform: scale(1);
+
+    -webkit-transition: all 1s ease;  
+    -moz-transition: all 1s ease;  
+    -o-transition: all 1s ease;  
+    -ms-transition: all 1s ease;  
+    transition: all 1s ease;
+}
+
+.menu-container.active {
+    transform: scale(1);
+
+    -webkit-transition: all 1s ease;  
+    -moz-transition: all 1s ease;  
+    -o-transition: all 1s ease;  
+    -ms-transition: all 1s ease;  
+    transition: all 1s ease;
+}
+
+.menu-container button {
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 6vh;
+    height: 6vh;
+    border: none;
+    background: none;
+} 
+
+.menu-container button i {
+    font-size: 4vh;
+}
+
+.menu-container button:nth-child(1) {
+    right: 3vh;
+    top: -3vh;
+}
+
+.menu-container button:nth-child(2) {
+    right: -4vh;
+    top: 4vh;
+}
+
+.menu-container button:nth-child(3) {
+    right: -4vh;
+    bottom: 4vh;
+}
+
+.menu-container button:nth-child(4) {
+    right: 3vh;
+    bottom: -3vh;
+}
+
+#top-body {
+    height: 15vh;
+}
+
+#bottom-body {
+    height: 20vh;
+}
+
+#main-body {
+    height: 65vh;
+    overflow-y: auto;
+}
+
+#help-info {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 0;
+    font-size: 2vh;
+}
+
+i.icon, i.fa {
+    color: white;
+}
