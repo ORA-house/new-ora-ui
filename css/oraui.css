@@ -1,40 +1,87 @@
 @font-face {
-    font-family: AvenirBlack;
+    font-family: 'AvenirBlack';
     src: url(./fonts/Avenir/Avenir-Black.ttf);
 }
 
-*:focus, button:focus {
+@font-face {
+    font-family: 'Avenir';
+    src: url(./fonts/Avenir/AvenirLTStdBook.otf);
+}
+
+* {
+    font-family: 'Avenir', sans-serif;
+    font-size: 2vh;
+}
+
+.homepage {
+    background-image: url('./imgs/waves_bg.png');
+    background-size: cover;
+}
+
+b {
+    font-family: 'AvenirBlack', sans-serif;
+}
+
+.grey {
+    color: white;
+    background-color: #3c3c3c;
+}
+
+.grey i.icon,
+.grey i.fa {
+    color: white;
+}
+
+.grey .image {
+    filter: invert(100);
+}
+
+*:focus,
+button:focus {
     outline: none;
 }
 
-h2{
-    font-family: AvenirBlack;
-    font-size: 10vh;
+h3 {
+    font-size: 6vh;
+}
+
+h2 {
+    font-family: 'AvenirBlack';
+    font-size: 9vh;
+}
+
+#home,
+#kitchen,
+#living,
+#car,
+#deck,
+#wash1,
+#wash2 {
+    display: none;
 }
 
 body {
-    height: 100vh; 
-    width: 100vw; 
+    height: 100vh;
+    width: 100vw;
 }
 
-#menu {
+#menu, #back {
     transform: scale(0.75);
     padding: 10px;
     border: none;
     background: none;
-    font-size:3vh; 
+    font-size: 3vh;
     margin-top: 47vh;
     position: absolute;
     z-index: 2;
-
-    -webkit-transition: all 1s ease;  
-    -moz-transition: all 1s ease;  
-    -o-transition: all 1s ease;  
-    -ms-transition: all 1s ease;  
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
     transition: all 1s ease;
 }
 
-.menu-container { 
+.menu-container {
     transform: scale(0);
     height: 25vh;
     width: 25vh;
@@ -43,31 +90,28 @@ body {
     top: 37.5vh;
     left: -14.5vh;
     border-radius: 100%;
-
-    -webkit-transition: all 1s ease;  
-    -moz-transition: all 1s ease;  
-    -o-transition: all 1s ease;  
-    -ms-transition: all 1s ease;  
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
     transition: all 1s ease;
 }
 
 #menu.active {
     transform: scale(1);
-
-    -webkit-transition: all 1s ease;  
-    -moz-transition: all 1s ease;  
-    -o-transition: all 1s ease;  
-    -ms-transition: all 1s ease;  
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
     transition: all 1s ease;
 }
 
 .menu-container.active {
     transform: scale(1);
-
-    -webkit-transition: all 1s ease;  
-    -moz-transition: all 1s ease;  
-    -o-transition: all 1s ease;  
-    -ms-transition: all 1s ease;  
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
     transition: all 1s ease;
 }
 
@@ -79,7 +123,7 @@ body {
     height: 6vh;
     border: none;
     background: none;
-} 
+}
 
 .menu-container button i {
     font-size: 4vh;
@@ -105,27 +149,218 @@ body {
     bottom: -3vh;
 }
 
-#top-body {
-    height: 15vh;
+.content > .row {
+    margin: 0 3vw 0 7vw;
 }
 
-#bottom-body {
+.header.row {
+    height: 25vh;
+}
+
+.footer.row {
+    width: 100%;
     height: 20vh;
+    padding-top: 20px;
 }
 
-#main-body {
-    height: 65vh;
+.content-body {
+    height: 55vh;
     overflow-y: auto;
 }
 
-#help-info {
+.header #help-info {
     background: none;
     border: none;
     position: absolute;
     right: 0;
+    height: fit-content;
+}
+
+.header #help-info i {
     font-size: 2vh;
 }
 
-i.icon, i.fa {
+.header h2 {
+    width: 100%;
+    height: fit-content;
+    margin-top: 4vh;
+}
+
+.header h3 {
+    margin-bottom: -10vh;
+}
+
+.header .desc {
+    width: 40vw;
+    margin-top: -4vh;
+    font-size: 1.5vh;
+}
+
+.content-body > .row, .card {
+    margin: auto;
+}
+
+.room-container {
+    width: 40vw;
+    margin: 3vh 2vw;
+}
+
+.room-container .room {
+    background-size: cover;
+    width: 15vw;
+    height: 15vw;
+    margin: auto;
+    cursor: pointer;
+}
+
+.room-container span {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.footer .right {
+    position: absolute;
+    right: 3vw;
+    bottom: 3vh;
+    text-align: right;
+}
+
+.footer .left {
+    position: absolute;
+    left: 0;
+    bottom: 3vh;
+}
+
+.footer .weather i {
+    font-size: 8vh;
+    padding: 1vh;
+    line-height: 0;
+}
+
+.footer #temperature,
+.footer .weather {
+    width: 10vh;
+    text-align: center;
+}
+
+.footer #temperature b {
+    font-size: 2vh;
+}
+
+.footer #time {
+    font-family: 'AvenirBlack';
+    font-size: 5vh;
+    height: 6vh;
+}
+
+.footer #day {
+    font-family: 'AvenirBlack';
+}
+
+.control .card {
+    width: 40vw;
+    min-width: 40vh;
+    box-shadow: none;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.control .card-header {
+    font-family: 'AvenirBlack', sans-serif;
+    letter-spacing: .2em;
+}
+
+.control .card-body {
+    padding: 0 20px;
+}
+
+.control .card-body .row {
+    margin: 1vh 0;
+}
+
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 5vh;
+    height: 3vh;
+    right: 1.5vw;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 2vh;
+    width: 2vh;
+    left: .5vh;
+    bottom: .5vh;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(2vh);
+    -ms-transform: translateX(2vh);
+    transform: translateX(2vh);
+}
+
+.slider.round, .slider.round:before {
+    border-radius: 5vh;
+}
+
+.horizontal-combo {
+    position: absolute;
+    display: inline-block;
+    right: 1.5vw;
+    width: 13vh;
+}
+
+.horizontal-combo button {
+    text-align: center;
+    padding: 0;
+    width: 3vh;
     color: white;
+    background-color: #ccc; 
+    border: 1px solid #ccc;
+}
+
+.horizontal-combo button:first-child {
+    border-radius: 3vh 0 0 3vh;
+    margin-right: .5vh;
+}
+
+.horizontal-combo button:last-child {
+    border-radius: 0 3vh 3vh 0;
+    margin-left: .5vh;
+    position: absolute;
+    right: 0;
 }
