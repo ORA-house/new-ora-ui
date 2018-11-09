@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ORA UI </title>
+    <link href="../libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../libs/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/magen-iot-admin.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/oraui.css">
+</head>
+
+<body class="grey">
+
+    <div id="home"></div>
+
+    <video autoplay muted loop id="home-vid" preload="auto">
+        <source src="../css/assets/videos/waves.mp4" type="video/mp4">
+    </video>
+
+    <!-- Menu sidebar -->
+    <!-- <div class="col-1" style="background-color: red"> -->
+    <button id="menu">
+        <i class="fa fa-circle"></i>
+    </button>
+    <div class="menu-container">
+        <button id="entertainment-nav">
+            <i class="fa fa-music"></i>
+        </button>
+        <button id="stat-nav">
+            <i class="fa fa-bar-chart"></i>
+        </button>
+        <button id="control-nav">
+            <i class="fa fa-cog"></i>
+        </button>
+        <button id="notes-nav">
+            <i class="fa fa-pencil"></i>
+        </button>
+    </div>
+    <!-- </div> -->
+
+    <!-- footer content -->
+    <!-- includes time, weather, house performance -->
+    <div class="footer row">
+        <div class="left">
+            <div class="weather">
+                <i class="icon ion-ios-sunny-outline"></i>
+            </div>
+            <div id="temperature">31&deg;<b>C</b></div>
+        </div>
+        <div class="right">
+            <div id="time"></div>
+            <div id="date"></div>
+            <div id="day"></div>
+        </div>
+    </div>
+
+
+    <!-- Javascript -->
+    <script src="../libs/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../libs/animation.js"></script>
+    <script src="../libs/functions.js"></script>
+    <script src="../libs/footer.js"></script>
+</body>
+
+</html>
