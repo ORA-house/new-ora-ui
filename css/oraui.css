@@ -278,6 +278,7 @@ body {
 .control .card-header {
     font-family: 'AvenirBlack', sans-serif;
     letter-spacing: .2em;
+    padding: 1vh;
 }
 
 .control .card-body {
