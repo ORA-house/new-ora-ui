@@ -2,21 +2,42 @@
 // setInterval(function () {
 $.get(baseURL + "/states", function (states) {
     for (let room in states) {
-        // console.log(room);
         for (let deviceType in states[room]["devices"]) {
-            // console.log(deviceType);
             let idNum = 1;
-            for (let device in states[room]["devices"][deviceType]) {
-                let state = states[room]["devices"][deviceType][device];
-                let id = deviceType + "-" + room + "-" + idNum;
 
-                if (state == 0) {
-                    $('input[id="' + id + '"]').prop('checked', false);
-                } else {
-                    $('input[id="' + id + '"]').prop('checked', true);
+            if (deviceType !== 'ac') {
+                for (let device in states[room]["devices"][deviceType]) {
+                    let state = states[room]["devices"][deviceType][device];
+                    let id = deviceType + "-" + room + "-" + idNum;
+
+                    if (state === 0) {
+                        $('input[id="' + id + '"]').prop('checked', false);
+                    } else {
+                        $('input[id="' + id + '"]').prop('checked', true);
+                    }
+
+                    idNum++;
                 }
+            } else {
+                for (let ac in states[room]["devices"][deviceType]) {
+                    for (let option in states[room]["devices"][deviceType][ac]) {
+                        let state = states[room]["devices"][deviceType][ac][option];
+                        let id = deviceType + "-" + option + "-" + room + "-" + idNum;
 
-                idNum++;
+                        console.log(id);
+
+                        if (option === 'state') {
+                            if (state === 0) {
+                                $('input[id="' + id + '"]').prop('checked', false);
+                            } else {
+                                $('input[id="' + id + '"]').prop('checked', true);
+                            }
+                        } else {
+                                $('#' + id).text(state);
+                        }
+                    }
+                    idNum++;
+                }
             }
         }
     }

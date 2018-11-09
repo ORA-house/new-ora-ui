@@ -25,3 +25,11 @@ $('#deck-op').click(function () {
 $('#car-op').click(function () {
     window.location.replace('rooms/car-parking.html');
 });
+
+$('.backToMain').click(function () {
+    window.location.replace('home.html');
+});
+
+$('.backToControls').click(function () {
+    window.location.replace('../control.html');
+});
