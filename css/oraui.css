@@ -3,9 +3,13 @@
     src: url(./fonts/Avenir/Avenir-Black.ttf);
 }
 
-h2{
+h1{
     font-family: AvenirBlack;
     font-size: 10vh;
+}
+
+.white-header{
+    color: white;
 }
 
 body {
