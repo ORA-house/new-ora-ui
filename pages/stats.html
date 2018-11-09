@@ -14,14 +14,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 </head>
 
-<body style="background-color: palevioletred">
+<body class="white" style="background-color: palevioletred">
 
     <!-- Menu sidebar -->
     <button id="back" onclick="goTo('home.html')">
         <i class="fa fa-chevron-circle-left"></i>
     </button>
 
-    <div class="content col">
+    <div id="stats" class="content col">
 
         <!-- header content -->
         <!-- includes headings, info button -->
@@ -30,11 +30,10 @@
                 <i class="icon ion-ios-information-outline"></i>
             </button>
 
-            <h3>TITLE 1</h3>
-            <h2>TITLE 2</h2>
+            <h2>STATS</h2>
             <!-- description of page -->
             <div class="desc">
-
+                In this page you will be able to view the statistics of the houses performances throughout the year
             </div>
         </div>
 
@@ -42,8 +41,13 @@
         <!-- includes content of page for users to interact with -->
         <div class="content-body row" style="background-color: orchid">
             <div class="card pd-20 pd-sm-20" style="position: absolute; margin-bottom: 1%; margin-top: 1%; margin-left:1%; margin-right:1%; display: inline-block; width: auto; height: auto; max-width: 97%">
+                <b>CARBON</b> EMISSIONS
                 <canvas id="myChart" style="width: auto; height:auto; max-height: 60%"></canvas> 
             </div> 
+            <!-- <div class="card pd-20 pd-sm-20" style="position: absolute; margin-bottom: 1%; margin-top: 1%; margin-left:1%; margin-right:1%; width: auto; height: auto; max-width: 97%">
+                <b>ELECTRICAL</b> USAGE
+                <canvas id="myChart1" style="width: auto; height:auto; max-height: 60%"></canvas> 
+            </div>  -->
         </div>
     </div>
 

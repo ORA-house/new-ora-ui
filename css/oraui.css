@@ -33,6 +33,11 @@ b {
     font-family: 'AvenirBlack', sans-serif;
 }
 
+.white{
+    color: #3c3c3c;
+    background-color: white;    
+}
+
 .grey {
     color: white;
     background-color: #3c3c3c;
