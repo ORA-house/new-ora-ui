@@ -3,6 +3,24 @@ $('#menu').click(function () {
   $('#menu').toggleClass('active');
 });
 
+$('#fan-mode').click(function () {
+  $('#fan-mode').addClass('selected');
+  $('#ac-mode').removeClass('selected');
+  $('#auto-mode').removeClass('selected');
+});
+
+$('#ac-mode').click(function () {
+  $('#ac-mode').addClass('selected');
+  $('#fan-mode').removeClass('selected');
+  $('#auto-mode').removeClass('selected');
+});
+
+$('#auto-mode').click(function () {
+  $('#auto-mode').addClass('selected');
+  $('#ac-mode').removeClass('selected');
+  $('#fan-mode').removeClass('selected');
+});
+
 $('.add').click(function () {
   incTemp();
 });
