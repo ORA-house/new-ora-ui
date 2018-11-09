@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ORA UI </title>
+    <link href="../../libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../libs/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/magen-iot-admin.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/oraui.css">
+</head>
+
+<body class="bright">
+
+    <!-- Menu sidebar -->
+    <button id="back" onclick="goTo('../control.html')">
+        <i class="fa fa-chevron-circle-left"></i>
+    </button>
+
+    <!-- MASTER BEDROOM -->
+    <div class="content col">
+
+        <!-- header content -->
+        <!-- includes headings, info button, face auth -->
+        <div class="header row">
+            <button id="help-info">
+                <i class="icon ion-ios-information-outline"></i>
+            </button>
+
+            <h3>CHILDREN</h3>
+            <h2>BEDROOM</h2>
+            <div class="desc">
+                In this page you will be able to control home appliances available in the master bedroom.
+            </div>
+        </div>
+
+        <!-- main content -->
+        <!-- includes content of page for users to interact with -->
+        <div class="content-body row">
+            <div class="row control">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header"> LIGHTS </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="control-label">Light 1</div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="row">
+                                <div class="control-label">Light 2</div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="row">
+                                <div class="control-label">Light 3</div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header"> AC </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="control-label">Power</div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="row">
+                                <div class="control-label">Temperature</div>
+                                <div class="horizontal-combo">
+                                    <button class="minus"> - </button>
+                                    <span id="setTemp" class="num"> 1 </span>
+                                    <button class="add"> + </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="control-label">Mode</div>
+                                <div class="horizontal-combo">
+                                    <button class="previous"> <i class="fa fa-caret-left"></i> </button>
+                                    <span class="mode"> Fan </span>
+                                    <button class="next"> <i class="fa fa-caret-right"></i> </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer content -->
+    <!-- includes time, weather, house performance -->
+    <div class="footer row">
+        <div class="left">
+            <div class="weather">
+                <i class="icon ion-ios-sunny-outline"></i>
+            </div>
+            <div id="temperature">31&deg;<b>C</b></div>
+        </div>
+        <div class="right">
+            <div id="time"></div>
+            <div id="date"></div>
+            <div id="day"></div>
+        </div>
+    </div>
+
+
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../../libs/functions.js"></script>
+</body>
+
+</html>

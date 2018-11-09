@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ORA UI </title>
+    <link href="../libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../libs/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/magen-iot-admin.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/oraui.css">
+</head>
+
+<body class="grey">
+
+    <!-- Menu sidebar -->
+    <button id="back" onclick="goTo('home.html')">
+        <i class="fa fa-chevron-circle-left"></i>
+    </button>
+
+    <!-- CONTROL -->
+    <div id="control" class="content col">
+
+        <!-- header content -->
+        <!-- includes headings, info button, face auth -->
+        <div class="header row">
+            <button id="help-info">
+                <i class="icon ion-ios-information-outline"></i>
+            </button>
+
+            <h2> CNTRL </h2>
+            <div class="desc">
+                In this page you will be able to adjust elements of the house along with settings.
+            </div>
+        </div>
+
+        <!-- main content -->
+        <!-- includes content of page for users to interact with -->
+        <div class="content-body row">
+            <div class="row">
+                <div id="mBed-op" class="col room-container">
+                    <div class="room image" style="background-image: url('../css/imgs/icons/bed.png');"></div>
+                    <span> Master Bedroom </span>
+                </div>
+                <div id="cBed-op" class="col room-container">
+                    <div class="room image" style="background-image: url('../css/imgs/icons/hostel.png');"></div>
+                    <span> Children Bedroom </span>
+                </div>
+            </div>
+            <div class="row">
+                <div id="kitchen-op" class="col room-container">
+                    <div class="room image" style="background-image: url('../css/imgs/icons/breakfast.png');"></div>
+                    <span> Kitchen + Dining </span>
+                </div>
+                <div class="col room-container">
+                    <div id="liv-op" class="room image" style="background-image: url('../css/imgs/icons/sofa.png');"></div>
+                    <span> Living Room </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col room-container">
+                    <div id="wash1-op" class="room image" style="background-image: url('../css/imgs/icons/bathroom.png');"></div>
+                    <span> Washroom 1 </span>
+                </div>
+                <div class="col room-container">
+                    <div id="wash2-op" class="room image" style="background-image: url('../css/imgs/icons/bathroom.png');"></div>
+                    <span> Washroom 2 </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col room-container">
+                    <div id="deck-op" class="room image" style="background-image: url('../css/imgs/icons/gardening.png');"></div>
+                    <span> Deck </span>
+                </div>
+                <div class="col room-container">
+                    <div id="car-op" class="room image" style="background-image: url('../css/imgs/icons/jeep.png');"></div>
+                    <span> Car Parking </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer content -->
+    <!-- includes time, weather, house performance -->
+    <div class="footer row">
+        <div class="left">
+            <div class="weather">
+                <i class="icon ion-ios-sunny-outline"></i>
+            </div>
+            <div id="temperature">31&deg;<b>C</b></div>
+        </div>
+        <div class="right">
+            <div id="time"></div>
+            <div id="date"></div>
+            <div id="day"></div>
+        </div>
+    </div>
+
+
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../libs/animation.js"></script>
+    <script src="../libs/functions.js"></script>
+</body>
+
+</html>
