@@ -278,6 +278,7 @@ body {
 .control .card-header {
     font-family: 'AvenirBlack', sans-serif;
     letter-spacing: .2em;
+    padding: 1vh;
 }
 
 .control .card-body {
@@ -371,20 +372,4 @@ input:checked+.slider:before {
     margin-left: .5vh;
     position: absolute;
     right: 0;
-}
-
-.btn-group[aria-label="mode"] {
-    position: absolute;
-    display: inline-block;
-    right: 1.5vw;
-}
-
-.btn-group[aria-label="mode"] > button {
-    font-size: 1.5vh;
-    font-weight: 400;
-}
-
-.btn-group[aria-label="mode"] > button.selected {
-    font-family: 'AvenirBlack', sans-serif;
-    background-color: rgba(0, 0, 0, .5);
 }
