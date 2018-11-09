@@ -14,18 +14,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 </head>
 
-<body class="white" style="background-color: palevioletred">
+<body class="bright">
 
     <!-- Menu sidebar -->
     <button id="back" onclick="goTo('home.html')">
         <i class="fa fa-chevron-circle-left"></i>
     </button>
 
-    <div id="stats" class="content col">
+    <div class="content col">
 
         <!-- header content -->
         <!-- includes headings, info button -->
-        <div class="header row" style="background-color: peru">
+        <div class="header row">
             <button id="help-info">
                 <i class="icon ion-ios-information-outline"></i>
             </button>
@@ -33,27 +33,41 @@
             <h2>STATS</h2>
             <!-- description of page -->
             <div class="desc">
-                In this page you will be able to view the statistics of the houses performances throughout the year
+                In this page you will be able to view the statistics of the houses performances throughout the year.
             </div>
         </div>
 
         <!-- main content -->
         <!-- includes content of page for users to interact with -->
-        <div class="content-body row" style="background-color: orchid">
-            <div class="card pd-20 pd-sm-20" style="position: absolute; margin-bottom: 1%; margin-top: 1%; margin-left:1%; margin-right:1%; display: inline-block; width: auto; height: auto; max-width: 97%">
-                <b>CARBON</b> EMISSIONS
-                <canvas id="myChart" style="width: auto; height:auto; max-height: 60%"></canvas> 
-            </div> 
-            <!-- <div class="card pd-20 pd-sm-20" style="position: absolute; margin-bottom: 1%; margin-top: 1%; margin-left:1%; margin-right:1%; width: auto; height: auto; max-width: 97%">
-                <b>ELECTRICAL</b> USAGE
-                <canvas id="myChart1" style="width: auto; height:auto; max-height: 60%"></canvas> 
-            </div>  -->
+        <div class="content-body row">
+            <div class="col chart-container">
+                <div class="row">
+                    <span> <b> CARBON </b> EMISSIONS </span>
+                    <canvas class="chart" id="carbonChart"></canvas>
+                </div>
+                <div class="row">
+                    <span> <b> ELECTRICAL </b> USAGE </span>
+                    <canvas class="chart" id="carbonChart"></canvas>
+                </div>
+                <div class="row">
+                    <span> <b> HUMIDITY </b> EMISSIONS </span>
+                    <canvas class="chart" id="carbonChart"></canvas>
+                </div>
+                <div class="row">
+                    <span> <b> TEMPERATURE </b> </span>
+                    <canvas class="chart" id="carbonChart"></canvas>
+                </div>
+                <div class="row">
+                    <span> <b> WATER </b> CONSUMPTION </span>
+                    <canvas class="chart" id="carbonChart"></canvas>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- footer content -->
     <!-- includes time, weather, house performance -->
-    <div class="footer row" style="background-color: peachpuff">
+    <div class="footer row">
         <div class="left">
             <div class="weather">
                 <i class="icon ion-ios-sunny-outline"></i>
@@ -67,119 +81,11 @@
         </div>
     </div>
 
-
     <!-- Javascript -->
     <script src="../libs/jquery/jquery-3.3.1.min.js"></script>
     <script src="../libs/functions.js"></script>
+    <script src="../libs/graph.js"></script>
     <script src="../libs/footer.js"></script>
-    <script>
-        window.chartColors = {
-            red: 'rgb(255, 99, 132)',
-            orange: 'rgb(255, 159, 64)',
-            yellow: 'rgb(255, 205, 86)',
-            green: 'rgb(75, 192, 192)',
-            blue: 'rgb(54, 162, 235)',
-            purple: 'rgb(153, 102, 255)',
-            grey: 'rgb(201, 203, 207)'
-        };
-
-        window.randomScalingFactor = function() {
-            return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.random() * 100;
-        };
-            var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-            var config = {
-                type: 'line',
-                data: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                    datasets: [{
-                        label: 'My First dataset',
-                        borderColor: window.chartColors.red,
-                        backgroundColor: window.chartColors.red,
-                        data: [
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor()
-                        ],
-                    }, {
-                        label: 'My Second dataset',
-                        borderColor: window.chartColors.blue,
-                        backgroundColor: window.chartColors.blue,
-                        data: [
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor()
-                        ],
-                    }, {
-                        label: 'My Third dataset',
-                        borderColor: window.chartColors.green,
-                        backgroundColor: window.chartColors.green,
-                        data: [
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor()
-                        ],
-                    }, {
-                        label: 'My Third dataset',
-                        borderColor: window.chartColors.yellow,
-                        backgroundColor: window.chartColors.yellow,
-                        data: [
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor()
-                        ],
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    title: {
-                        display: true,
-                        text: 'Chart.js Line Chart - Stacked Area'
-                    },
-                    tooltips: {
-                        mode: 'index',
-                    },
-                    hover: {
-                        mode: 'index'
-                    },
-                    scales: {
-                        xAxes: [{
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Month'
-                            }
-                        }],
-                        yAxes: [{
-                            stacked: true,
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Value'
-                            }
-                        }]
-                    }
-                }
-            };
-
-            window.onload = function() {
-                var ctx = document.getElementById('myChart').getContext('2d');
-                window.myLine = new Chart(ctx, config);
-            };
-    </script>
 </body>
 
 </html>

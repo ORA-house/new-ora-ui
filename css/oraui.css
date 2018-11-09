@@ -206,6 +206,7 @@ body {
 .content-body>.row,
 .card {
     margin: auto;
+    margin-left: -2vh;
 }
 
 .room-container {
@@ -377,4 +378,17 @@ input:checked+.slider:before {
     margin-left: .5vh;
     position: absolute;
     right: 0;
+}
+
+.chart-container span, .chart-container span > b {
+    font-size: 4vh;
+}
+
+.chart-container span > b {
+    font-family: 'AvenirBlack', sans-serif;
+}
+
+.chart-container .chart {
+    max-height: 50vh !important;
+    margin: auto;
 }
