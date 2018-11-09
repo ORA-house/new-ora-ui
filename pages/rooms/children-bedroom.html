@@ -6,14 +6,14 @@
     <link href="../../libs/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="../../libs/Ionicons/css/ionicons.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/magen-iot-admin.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/oraui.css">
 </head>
 
 <body class="bright">
 
     <!-- Menu sidebar -->
-    <button id="back" onclick="goTo('../control.html')">
+    <button id="back" class="backToControls">
         <i class="fa fa-chevron-circle-left"></i>
     </button>
 
@@ -43,7 +43,7 @@
                         <div class="card-header">
                             LIGHTS
                             <label class="switch">
-                                <input type="checkbox">
+                                <input type="checkbox" id="light-childrenbedroom-1" class="device">
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -57,24 +57,24 @@
                             <div class="row">
                                 <div class="control-label">Power</div>
                                 <label class="switch">
-                                    <input type="checkbox">
+                                    <input type="checkbox" id="ac-state-childrenbedroom-1" class="ac-control ac-state">
                                     <span class="slider round"></span>
                                 </label>
                             </div>
                             <div class="row">
                                 <div class="control-label">Temperature</div>
                                 <div class="horizontal-combo">
-                                    <button class="minus"> - </button>
-                                    <span id="setTemp" class="num"> 1 </span>
-                                    <button class="add"> + </button>
+                                    <button class="minus-ac-temp"> - </button>
+                                    <span id="ac-temp-childrenbedroom-1" class="ac-control ac-temp"> 5 </span>
+                                    <button class="add-ac-temp"> + </button>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="control-label">Mode</div>
                                 <div class="horizontal-combo">
-                                    <button class="previous"> <i class="fa fa-caret-left"></i> </button>
-                                    <span class="mode"> Fan </span>
-                                    <button class="next"> <i class="fa fa-caret-right"></i> </button>
+                                    <button class="previous-ac-mode"> <i class="fa fa-caret-left"></i> </button>
+                                    <span id="ac-mode-childrenbedroom-1" class="ac-control ac-mode">Auto</span>
+                                    <button class="next-ac-mode"> <i class="fa fa-caret-right"></i> </button>
                                 </div>
                             </div>
                         </div>
@@ -104,6 +104,9 @@
     <!-- Javascript -->
     <script src="../../libs/jquery/jquery-3.3.1.min.js"></script>
     <script src="../../libs/functions.js"></script>
+    <script src="../../libs/navigation.js"></script>
+    <script src="../../libs/control.js"></script>
+    <script src="../../libs/state.js"></script>
     <script src="../../libs/footer.js"></script>
 </body>
 
