@@ -17,8 +17,8 @@
         <i class="fa fa-chevron-circle-left"></i>
     </button>
 
-    <!-- MASTER BEDROOM -->
-    <div class="content col">
+    <!-- LIVING ROOM -->
+    <div id="living" class="content col">
 
         <!-- header content -->
         <!-- includes headings, info button, face auth -->
@@ -27,10 +27,10 @@
                 <i class="icon ion-ios-information-outline"></i>
             </button>
 
-            <h3>MASTER</h3>
-            <h2>BEDROOM</h2>
+            <h3>LIVING</h3>
+            <h2>ROOM</h2>
             <div class="desc">
-                In this page you will be able to control home appliances available in the master bedroom.
+                In this page you will be able to control home appliances available in the kitchen and dining room.
             </div>
         </div>
 
@@ -38,6 +38,8 @@
         <!-- includes content of page for users to interact with -->
         <div class="content-body row">
             <div class="row control">
+
+                <!-- LIGHTS -->
                 <div class="col">
                     <div class="card">
                         <div class="card-header"> LIGHTS </div>
@@ -67,6 +69,7 @@
                     </div>
                 </div>
 
+                <!-- AC -->
                 <div class="col">
                     <div class="card">
                         <div class="card-header"> AC </div>
@@ -90,9 +93,25 @@
                                 <div class="control-label">Mode</div>
                                 <div class="horizontal-combo">
                                     <button class="previous"> <i class="fa fa-caret-left"></i> </button>
-                                    <span id="acMode"> Fan </span>
+                                    <span class="mode"> Fan </span>
                                     <button class="next"> <i class="fa fa-caret-right"></i> </button>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TV -->
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header"> TELEVISION </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="control-label">Power</div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
                             </div>
                         </div>
                     </div>

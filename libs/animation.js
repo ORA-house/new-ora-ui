@@ -11,36 +11,6 @@ $('#menu').click(function () {
   }
 });
 
-$('#control-nav').click(function () {
-  window.location.replace('control.html');
-});
-
-$('#mBed-op').click(function () {
-  goToRoom('master-bedroom.html');
-});
-
-$('#cBed-op').click(function () {
-  goToRoom($('#mBed'));
-  $('#mBed .header h3').html('CHILDREN');
-  $('#mBed .header .desc').html('In this page you will be able to control home appliances available in the children bedroom.');
-});
-
-$('#kitchen-op').click(function () {
-  goToRoom($('#kitchen'));
-});
-
-$('#liv-op').click(function () {
-  goToRoom($('#living'));
-});
-
-$('#deck-op').click(function () {
-  goToRoom($('#deck'));
-});
-
-$('#car-op').click(function () {
-  goToRoom($('#car'));
-});
-
 $('.add').click(function () {
   incTemp();
 });
@@ -49,9 +19,31 @@ $('.minus').click(function () {
   decTemp();
 });
 
-function goToRoom($room) {
-  $('#control').css('display', 'none');
-  $room.css('display', 'block');
-  $('body').addClass('bright');
-  $('body').removeClass('grey');
-}
+// NAVIGATION
+$('#control-nav').click(function () {
+  goTo('control.html');
+});
+
+$('#mBed-op').click(function () {
+  goTo('rooms/master-bedroom.html');
+});
+
+$('#cBed-op').click(function () {
+  goTo('rooms/children-bedroom.html');
+});
+
+$('#kitchen-op').click(function () {
+  goTo('rooms/kitchen.html');
+});
+
+$('#liv-op').click(function () {
+  goTo('rooms/living-room.html');
+});
+
+$('#deck-op').click(function () {
+  goTo('rooms/deck.html');
+});
+
+$('#car-op').click(function () {
+  goTo('rooms/car-parking.html');
+});

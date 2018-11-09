@@ -50,16 +50,6 @@ h2 {
     font-size: 9vh;
 }
 
-#home,
-#kitchen,
-#living,
-#car,
-#deck,
-#wash1,
-#wash2 {
-    display: none;
-}
-
 body {
     height: 100vh;
     width: 100vw;
