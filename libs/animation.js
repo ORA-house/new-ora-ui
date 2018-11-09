@@ -1,14 +1,6 @@
 $('#menu').click(function () {
-  if ($('#home').css('display') === 'none') {
-    $('.content').css('display', 'none');
-    $('#home').css('display', 'block');
-    $('body').removeClass('bright');
-    $('body').addClass('homepage');
-    $('body').addClass('grey');
-  } else {
-    $('.menu-container').toggleClass('active');
-    $('#menu').toggleClass('active');
-  }
+  $('.menu-container').toggleClass('active');
+  $('#menu').toggleClass('active');
 });
 
 $('.add').click(function () {
