@@ -24,8 +24,6 @@ $.get(baseURL + "/states", function (states) {
                         let state = states[room]["devices"][deviceType][ac][option];
                         let id = deviceType + "-" + option + "-" + room + "-" + idNum;
 
-                        console.log(id);
-
                         if (option === 'state') {
                             if (state === 0) {
                                 $('input[id="' + id + '"]').prop('checked', false);
