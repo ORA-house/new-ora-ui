@@ -1,6 +1,7 @@
-let server = 'localhost';
+let server = window.location.hostname;
 let port = '1880';
-let baseURL = 'http://' + server + ':' + port;
+let protocol = window.location.protocol;
+let baseURL = protocol + '//' + server + ':' + port;
 
 $('input[class="device"]').change(function () {
     this.value = +this.checked;
