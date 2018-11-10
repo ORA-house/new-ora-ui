@@ -62,15 +62,7 @@
     <script src="../libs/navigation.js"></script>
     <script src="../libs/animation.js"></script>
     <script src="../libs/footer.js"></script>
-    <script>
-		setInterval(function() {
-			$.get(baseURL + "/getTemp", function(data){
-                $('#temperature-value').text(data.tempc);
-                console.log(data.tempc);
-            });
-
-		}, 3000)
-    </script>
+    <script src="../libs/weather.js"></script>
 </body>
 
 </html>
