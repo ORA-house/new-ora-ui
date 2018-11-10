@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ORA UI </title>
+    <link href="../libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../libs/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/magen-iot-admin.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/oraui.css">
+</head>
+
+<body class="grey">
+
+    <div id="home"></div>
+
+    <video autoplay muted loop id="home-vid" preload="auto">
+        <source src="../css/assets/videos/waves.mp4" type="video/mp4">
+    </video>
+
+    <!-- Menu sidebar -->
+    <!-- <div class="col-1" style="background-color: red"> -->
+    <button id="login">
+        <i class="fa fa-circle"></i>
+    </button>
+    <!-- </div> -->
+
+    <div class="face-frame">
+        <div class="face-container">
+            <video id="face-video" width="320" height="240" preload autoplay loop muted></video>
+            <canvas width="320" height="240" id="face-canvas"></canvas>
+        </div>
+    </div>
+
+    <h1 id="welcome"></h1>
+
+    <!-- footer content -->
+    <!-- includes time, weather, house performance -->
+    <div class="footer row">
+        <div class="left">
+            <div class="weather">
+                <i class="icon ion-ios-sunny-outline"></i>
+            </div>
+            <div id="temperature">31&deg;<b>C</b></div>
+        </div>
+        <div class="right">
+            <div id="time"></div>
+            <div id="date"></div>
+            <div id="day"></div>
+        </div>
+    </div>
+
+
+    <!-- Javascript -->
+    <script src="../libs/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../libs/navigation.js"></script>
+    <script src="../libs/animation.js"></script>
+    <script src="../libs/footer.js"></script>
+
+    <script src="../libs/tracking-min.js"></script>
+    <script src="../libs/face-min.js"></script>
+
+    <script>
+        function detectFace() {
+            var video = document.getElementById('face-video');
+            var canvas = document.getElementById('face-canvas');
+            var context = canvas.getContext('2d');
+            var count = 0;
+
+            var tracker = new tracking.ObjectTracker('face');
+            tracker.setInitialScale(4);
+            tracker.setStepSize(2);
+            tracker.setEdgesDensity(0.1);
+
+            tracking.track('#face-video', tracker, { camera: true });
+
+            tracker.on('track', function (event) {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+
+                event.data.forEach(function (rect) {
+                    context.strokeStyle = '#a64ceb';
+                    context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+                    count = count + 1;
+                    context.font = '11px Helvetica';
+                    context.fillStyle = "#fff";
+                    context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+                    context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+                    // console.log(count);
+                    if (count > 30) {
+                        document.getElementById('welcome').innerHTML = "WELCOME BACK";
+                        count++;
+                        if(count > 40){
+                            window.location.replace("home.html");
+                            context = "";
+                        }
+                        //break;
+                    }
+
+                });
+            });
+        };
+    </script>
+</body>
+
+</html>
