@@ -2,6 +2,10 @@ $('#control-nav').click(function () {
     window.location.replace('control.html');
 });
 
+$('#stat-nav').click(function () {
+    window.location.replace('stats.html');
+});
+
 $('#mBed-op').click(function () {
     window.location.replace('rooms/master-bedroom.html');
 });
