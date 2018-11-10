@@ -210,7 +210,6 @@ body {
 .content-body>.row,
 .card {
     margin: auto;
-    margin-left: -2vh;
 }
 
 .room-container {
