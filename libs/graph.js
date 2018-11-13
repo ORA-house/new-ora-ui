@@ -14,16 +14,42 @@ window.randomScalingFactor = function () {
 
 window.onload = function () {
     var carbonElementDaily = document.getElementById('carbonChartDaily');
-    var electricityElementDaily = document.getElementById('electricityChartDaily');
+    var powerElementDaily = document.getElementById('powerChartDaily');
     var humidityElementDaily = document.getElementById('humidityChartDaily');
     var tempElementDaily = document.getElementById('tempChartDaily');
     var waterElementDaily = document.getElementById('waterChartDaily');
 
     var carbonElementLive = document.getElementById('carbonChartLive');
-    var electricityElementLive = document.getElementById('electricityChartLive');
+    var powerElementLive = document.getElementById('powerChartLive');
     var humidityElementLive = document.getElementById('humidityChartLive');
     var tempElementLive = document.getElementById('tempChartLive');
     var waterElementLive = document.getElementById('waterChartLive');
+
+    var liveChartOptions = {
+        legend: {
+            display: false,
+                labels: {
+                    display: false
+                }
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                    fontSize: 10,
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    fontSize: 8
+                }
+            }]
+        },
+        animation: {
+            duration: 0
+        }
+    };
 
     //**************************************************************/
     //                      Daily Charts
@@ -81,16 +107,16 @@ window.onload = function () {
         window.myLine = new Chart(ctxCarbonDaily, configCarbonDaily);
     }
 
-    if(electricityElementDaily != null)
+    if(powerElementDaily != null)
     {
-        var ctxElectricityDaily = electricityElementDaily.getContext('2d');
+        var ctxPowerDaily = powerElementDaily.getContext('2d');
 
-        var configElectricityDaily = {
+        var configPowerDaily = {
             type: 'line',
             data: {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [{
-                    label: 'Electricity Consumption',
+                    label: 'Power Consumption',
                     borderColor: window.chartColors.green,
                     backgroundColor: window.chartColors.green,
                     data: [
@@ -130,7 +156,7 @@ window.onload = function () {
             }
         };
 
-        window.myLine = new Chart(ctxElectricityDaily, configElectricityDaily);
+        window.myLine = new Chart(ctxPowerDaily, configPowerDaily);
     }
 
     if(humidityElementDaily != null)
@@ -299,49 +325,148 @@ window.onload = function () {
 
         var configCarbonLive = {
             type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [{
-                    label: 'Water Consumption',
-                    borderColor: window.chartColors.purple,
-                    backgroundColor: window.chartColors.purple,
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor()
-                    ],
-                }]
-            },
-            options: {
-                responsive: true,
-                tooltips: {
-                    mode: 'index',
-                },
-                hover: {
-                    mode: 'index'
-                },
-                scales: {
-                    xAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Month'
-                        }
-                    }],
-                    yAxes: [{
-                        stacked: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Value'
-                        }
-                    }]
-                }
-            }
+            options: liveChartOptions
         };
         
-        window.myLine = new Chart(ctxCarbonLive, configCarbonLive);
+        var carbonChart = new Chart(ctxCarbonLive, configCarbonLive);
+        carbonChart.options.scales.yAxes[0].ticks.suggestedMin = 400;
+        carbonChart.options.scales.yAxes[0].ticks.suggestedMax = 850;  
+        
+        carbonChart.update();
+
+        function getco2data(){
+            var url = baseURL+"/getco2data";
+            var newData;
+            $.get(url, function(response){
+                newData = (JSON.parse(response)).data;
+                console.log(newData);
+                // if(newData.labels[newData.labels.length - 1] != data.labels[data.labels.length - 1])
+                // {
+                    data = newData;
+                    carbonChart.config.data = newData;
+                    carbonChart.options.animation.duration = 0;
+                    
+                    carbonChart.options.scales.yAxes[0].ticks.suggestedMin = 400;
+                    carbonChart.options.scales.yAxes[0].ticks.suggestedMax = 850;  
+                    
+                    carbonChart.update();
+                //}
+            });
+        }
+        getco2data();
+        setInterval(getco2data,1000);
+    }
+
+    if(powerElementLive != null)
+    {
+        var ctxPowerLive = powerElementLive.getContext('2d');
+
+        var configPowerLive = {
+            type: 'line',
+            options: liveChartOptions
+        };
+        
+        var powerChart = new Chart(ctxPowerLive, configPowerLive);
+        powerChart.options.scales.yAxes[0].ticks.suggestedMin = 400;
+        powerChart.options.scales.yAxes[0].ticks.suggestedMax = 850;  
+        
+        powerChart.update();
+
+        function getpowerdata(){
+            var url = baseURL+"/getpowerdata";
+            var newData;
+            $.get(url, function(response){
+                newData = (JSON.parse(response)).data;
+                console.log(newData);
+                // if(newData.labels[newData.labels.length - 1] != data.labels[data.labels.length - 1])
+                // {
+                    data = newData;
+                    powerChart.config.data = newData;
+                    powerChart.options.animation.duration = 0;
+                    
+                    powerChart.options.scales.yAxes[0].ticks.suggestedMin = 400;
+                    powerChart.options.scales.yAxes[0].ticks.suggestedMax = 850;  
+                    
+                    powerChart.update();
+                //}
+            });
+        }
+        getpowerdata();
+        setInterval(getpowerdata,1000);
+    }
+
+    if(humidityElementLive != null)
+    {
+        var ctxHumidityLive = humidityElementLive.getContext('2d');
+
+        var configHumidityLive = {
+            type: 'line',
+            options: liveChartOptions
+        };
+        
+        var humidityChart = new Chart(ctxHumidityLive, configHumidityLive);
+        humidityChart.options.scales.yAxes[0].ticks.suggestedMin = 0;
+        humidityChart.options.scales.yAxes[0].ticks.suggestedMax = 65;  
+        
+        humidityChart.update();
+
+        function gethumiditydata(){
+            var url = baseURL+"/gethumidity";
+            var newData;
+            $.get(url, function(response){
+                newData = (JSON.parse(response)).data;
+                console.log(newData);
+                // if(newData.labels[newData.labels.length - 1] != data.labels[data.labels.length - 1])
+                // {
+                    data = newData;
+                    humidityChart.config.data = newData;
+                    humidityChart.options.animation.duration = 0;
+                    
+                    humidityChart.options.scales.yAxes[0].ticks.suggestedMin = 400;
+                    
+                    humidityChart.update();
+                //}
+            });
+        }
+        gethumiditydata();
+        setInterval(gethumiditydata,1000);
+    }
+
+    if(tempElementLive != null)
+    {
+        var ctxTempLive = tempElementLive.getContext('2d');
+
+        var configTempLive = {
+            type: 'line',
+            options: liveChartOptions
+        };
+        
+        var tempChart = new Chart(ctxTempLive, configTempLive);
+        tempChart.options.scales.yAxes[0].ticks.suggestedMin = 5;
+        tempChart.options.scales.yAxes[0].ticks.suggestedMax = 50;  
+        
+        tempChart.update();
+
+        function gettempdata(){
+            var url = baseURL+"/gettempdata";
+            var newData;
+            $.get(url, function(response){
+                newData = (JSON.parse(response));
+                console.log(newData);
+                // if(newData.labels[newData.labels.length - 1] != data.labels[data.labels.length - 1])
+                // {
+                    data = newData;
+                    tempChart.config.data = newData;
+                    tempChart.options.animation.duration = 0;
+                    
+                    tempChart.options.scales.yAxes[0].ticks.suggestedMin = 5;
+                    tempChart.options.scales.yAxes[0].ticks.suggestedMax = 50; 
+                    
+                    tempChart.update();
+                //}
+            });
+        }
+        gettempdata();
+        setInterval(gettempdata,1000);
     }
 };
