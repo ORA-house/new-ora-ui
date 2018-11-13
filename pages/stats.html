@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="../css/magen-iot-admin.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/oraui.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+    <script src="../libs/chartjs/dist/Chart.js"></script> 
+    <script src="../libs/chartjs/dist/Chart.min.js"></script> 
+    <script src="../libs/chartjs/dist/Chart.bundle.js"></script> 
+    <script src="../libs/chartjs/dist/Chart.bundle.min.js"></script>  
 </head>
 
 <body class="bright">
@@ -42,23 +43,23 @@
             <div class="col chart-container">
                 <div class="row">
                     <span> <b> CARBON </b> EMISSIONS </span>
-                    <canvas class="chart" id="carbonChart"></canvas>
+                    <canvas class="chart" id="carbonChartDaily"></canvas>
                 </div>
                 <div class="row">
                     <span> <b> ELECTRICAL </b> USAGE </span>
-                    <canvas class="chart" id="electricityChart"></canvas>
+                    <canvas class="chart" id="electricityChartDaily"></canvas>
                 </div>
                 <div class="row">
                     <span> <b> HUMIDITY </b> EMISSIONS </span>
-                    <canvas class="chart" id="humidityChart"></canvas>
+                    <canvas class="chart" id="humidityChartDaily"></canvas>
                 </div>
                 <div class="row">
                     <span> <b> TEMPERATURE </b> </span>
-                    <canvas class="chart" id="tempChart"></canvas>
+                    <canvas class="chart" id="tempChartDaily"></canvas>
                 </div>
                 <div class="row">
                     <span> <b> WATER </b> CONSUMPTION </span>
-                    <canvas class="chart" id="waterChart"></canvas>
+                    <canvas class="chart" id="waterChartDaily"></canvas>
                 </div>
             </div>
         </div>
@@ -82,10 +83,11 @@
 
     <!-- Javascript -->
     <script src="../libs/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../libs/functions.js"></script>
+    <script src="../libs/functions.js"></script> 
     <script src="../libs/graph.js"></script>
     <script src="../libs/navigation.js"></script>
     <script src="../libs/footer.js"></script>
+    <script src="../libs/control.js"></script>
     <script src="../libs/weather.js"></script>
 </body>
 
