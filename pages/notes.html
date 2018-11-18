@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ORA UI </title>
+    <link href="../libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../libs/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/magen-iot-admin.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/oraui.css">
+
+</head>
+
+<body class="bright">
+
+    <div id="notes-bg"></div>
+
+    <!-- Menu sidebar -->
+    <button id="back" class="backToMain">
+        <i class="fa fa-chevron-circle-left"></i>
+    </button>
+
+    <div class="content col">
+
+        <!-- header content -->
+        <!-- includes headings, info button -->
+        <div class="header row">
+            <button id="help-info">
+                <i class="icon ion-ios-information-outline"></i>
+            </button>
+
+            <h2>NOTES</h2>
+            <!-- description of page -->
+            <div class="desc">
+                Go on.... Scribble your way through
+            </div>
+        </div>
+
+        <!-- main content -->
+        <!-- includes content of page for users to interact with -->
+        <div class=" row">
+            <canvas id="notes-canvas" height="1400" width="950"></canvas>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="../libs/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../libs/functions.js"></script>
+    <script src="../libs/navigation.js"></script>
+    <script src="../libs/paint.js"></script>
+</body>
+
+</html>

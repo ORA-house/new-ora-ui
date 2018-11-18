@@ -29,6 +29,17 @@
     min-height: 100%;
 }
 
+#notes-bg {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-image: url('../css/assets/imgs/note-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 b {
     font-family: 'AvenirBlack', sans-serif;
 }
