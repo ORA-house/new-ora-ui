@@ -418,3 +418,16 @@ input:checked+.slider:before {
     max-height: 50vh !important;
     margin: auto;
 }
+
+.chart-container .row .graph-text {
+    width: 100%;
+    text-align: right;
+    padding-bottom: 20px;
+}
+
+.chart-container .chart-small {
+    max-width: 25vh !important;
+    position: relative;
+    right: 0;
+    padding: 10px;
+}

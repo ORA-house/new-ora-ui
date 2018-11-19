@@ -30,10 +30,10 @@
                 <i class="icon ion-ios-information-outline"></i>
             </button>
 
-            <h2>STATS</h2>
+            <h2>CARBON</h2>
             <!-- description of page -->
             <div class="desc">
-                In this page you will be able to view the statistics of the houses performances throughout the year.
+                A more in-depth analysis of the carbon emmisions produced by the house
             </div>
         </div>
 
@@ -42,25 +42,13 @@
         <div class="content-body row">
             <div class="col chart-container">
                 <div class="row">
-                    <span> <b> CARBON </b> EMISSIONS </span>
-                    <canvas class="chart" id="carbonChartDaily"></canvas>
+                    <canvas class="chart" id="carbonChartLive"></canvas>
+                    <div class="graph-text">Live Reading...</div>
                 </div>
                 <div class="row">
-                    <span> <b> ELECTRICAL </b> USAGE </span>
-                    <canvas class="chart" id="powerChartDaily"></canvas>
+                    <canvas class="chart-small" id="carbonChartDaily"></canvas>
+                    <div class="graph-text">Daily Overview</div>
                 </div>
-                <div class="row">
-                    <span> <b> HUMIDITY </b> EMISSIONS </span>
-                    <canvas class="chart" id="humidityChartDaily"></canvas>
-                </div>
-                <div class="row">
-                    <span> <b> TEMPERATURE </b> </span>
-                    <canvas class="chart" id="tempChartDaily"></canvas>
-                </div>
-                <!-- <div class="row">
-                    <span> <b> POWER </b> GENERATED </span>
-                    <canvas class="chart" id="powerGenChartDaily"></canvas>
-                </div> -->
             </div>
         </div>
     </div>
@@ -83,7 +71,7 @@
 
     <!-- Javascript -->
     <script src="../libs/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../libs/functions.js"></script> 
+    <script src="../libs/functions.js"></script>
     <script src="../libs/graph.js"></script>
     <script src="../libs/navigation.js"></script>
     <script src="../libs/footer.js"></script>

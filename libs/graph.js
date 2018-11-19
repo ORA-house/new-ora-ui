@@ -17,15 +17,15 @@ window.onload = function () {
     var powerElementDaily = document.getElementById('powerChartDaily');
     var humidityElementDaily = document.getElementById('humidityChartDaily');
     var tempElementDaily = document.getElementById('tempChartDaily');
-    var waterElementDaily = document.getElementById('waterChartDaily');
+    //var powerGenElementDaily = document.getElementById('powerGenChartDaily');
 
     var carbonElementLive = document.getElementById('carbonChartLive');
     var powerElementLive = document.getElementById('powerChartLive');
     var humidityElementLive = document.getElementById('humidityChartLive');
     var tempElementLive = document.getElementById('tempChartLive');
-    var waterElementLive = document.getElementById('waterChartLive');
+    //var powerGenElementLive = document.getElementById('powerGenChartLive');
 
-    var liveChartOptions = {
+    var chartOptions = {
         legend: {
             display: false,
                 labels: {
@@ -36,13 +36,13 @@ window.onload = function () {
             yAxes: [{
                 ticks: {
                     beginAtZero:false,
-                    fontSize: 10,
+                    fontSize: 16,
                 }
             }],
             xAxes: [{
                 ticks: {
                     beginAtZero:true,
-                    fontSize: 8
+                    fontSize: 16
                 }
             }]
         },
@@ -54,266 +54,98 @@ window.onload = function () {
     //**************************************************************/
     //                      Daily Charts
     /***************************************************************/
-        
-    if(carbonElementDaily != null)
+
+    if((carbonElementDaily != null) || (powerElementDaily != null) || (humidityElementDaily != null) || (tempElementDaily != null))
     {
-        var ctxCarbonDaily = carbonElementDaily.getContext('2d');
+        var url = baseURL+"/dailychartdata";
+        var data;
+        $.get(url, function(response){
+            tempData = response.tempData;
+            co2Data = response.co2Data;
+            humidityData = response.humidityData;
+            powerConData = response.powerConData;
+            options = response.options;
 
-        var configCarbonDaily = {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [{
-                    label: 'Carbon',
-                    borderColor: window.chartColors.red,
-                    backgroundColor: window.chartColors.red,
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor()
-                    ],
-                }]
-            },
-            options: {
-                responsive: true,
-                tooltips: {
-                    mode: 'index',
-                },
-                hover: {
-                    mode: 'index'
-                },
-                scales: {
-                    xAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Month'
-                        }
-                    }],
-                    yAxes: [{
-                        stacked: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Value'
-                        }
-                    }]
-                }
+            if(carbonElementDaily != null)
+            {
+                var ctxCarbonDaily = carbonElementDaily.getContext('2d');
+
+                var configCarbonDaily = {
+                    type: 'line',
+                    data: JSON.parse(co2Data),
+                    options: chartOptions
+                };
+
+                var carbonChartDaily = new Chart(ctxCarbonDaily, configCarbonDaily);
+                carbonChartDaily.options.scales.yAxes[0].ticks.suggestedMin = 0;
+                carbonChartDaily.options.scales.yAxes[0].ticks.suggestedMax = 100;
+                
+                carbonChartDaily.update();
+
             }
-        };
 
-        window.myLine = new Chart(ctxCarbonDaily, configCarbonDaily);
+            if(powerElementDaily != null)
+            {
+                var ctxPowerDaily = powerElementDaily.getContext('2d');
+
+                var configPowerDaily = {
+                    type: 'line',
+                    data: JSON.parse(powerConData),
+                    options: chartOptions
+                };
+
+                var powerChartDaily = new Chart(ctxPowerDaily, configPowerDaily);
+                // powerChartDaily.options.scales.yAxes[0].ticks.suggestedMin = 0;
+                // powerChartDaily.options.scales.yAxes[0].ticks.suggestedMax = 100;
+
+                console.log(configPowerDaily);
+                
+                powerChartDaily.update();
+            }
+
+            if(humidityElementDaily != null)
+            {
+                var ctxHumidityDaily = humidityElementDaily.getContext('2d');
+
+                var configHumidityDaily = {
+                    type: 'line',
+                    data: JSON.parse(humidityData),
+                    options: chartOptions
+                };
+
+                var humidityChartDaily = new Chart(ctxHumidityDaily, configHumidityDaily);
+                // powerChartDaily.options.scales.yAxes[0].ticks.suggestedMin = 0;
+                // powerChartDaily.options.scales.yAxes[0].ticks.suggestedMax = 100;
+
+                console.log(configHumidityDaily);
+                
+                humidityChartDaily.update();
+            }
+
+            if(tempElementDaily != null)
+            {
+                var ctxTempDaily = tempElementDaily.getContext('2d');
+
+                var configTempDaily = {
+                    type: 'line',
+                    data: JSON.parse(tempData),
+                    options: chartOptions
+                };
+
+                var tempChartDaily = new Chart(ctxTempDaily, configTempDaily);
+                // powerChartDaily.options.scales.yAxes[0].ticks.suggestedMin = 0;
+                // powerChartDaily.options.scales.yAxes[0].ticks.suggestedMax = 100;
+
+                console.log(configTempDaily);
+                
+                tempChartDaily.update();
+
+                window.myLine = new Chart(ctxTempDaily, configTempDaily);
+            }
+        });
     }
 
-    if(powerElementDaily != null)
-    {
-        var ctxPowerDaily = powerElementDaily.getContext('2d');
-
-        var configPowerDaily = {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [{
-                    label: 'Power Consumption',
-                    borderColor: window.chartColors.green,
-                    backgroundColor: window.chartColors.green,
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor()
-                    ],
-                }]
-            },
-            options: {
-                responsive: true,
-                tooltips: {
-                    mode: 'index',
-                },
-                hover: {
-                    mode: 'index'
-                },
-                scales: {
-                    xAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Month'
-                        }
-                    }],
-                    yAxes: [{
-                        stacked: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Value'
-                        }
-                    }]
-                }
-            }
-        };
-
-        window.myLine = new Chart(ctxPowerDaily, configPowerDaily);
-    }
-
-    if(humidityElementDaily != null)
-    {
-        var ctxHumidityDaily = humidityElementDaily.getContext('2d');
-
-        var configHumidityDaily = {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [{
-                    label: 'Humidity Level',
-                    borderColor: window.chartColors.grey,
-                    backgroundColor: window.chartColors.grey,
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor()
-                    ],
-                }]
-            },
-            options: {
-                responsive: true,
-                tooltips: {
-                    mode: 'index',
-                },
-                hover: {
-                    mode: 'index'
-                },
-                scales: {
-                    xAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Month'
-                        }
-                    }],
-                    yAxes: [{
-                        stacked: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Value'
-                        }
-                    }]
-                }
-            }
-        };
-
-        window.myLine = new Chart(ctxHumidityDaily, configHumidityDaily);
-    }
-
-    if(tempElementDaily != null)
-    {
-        var ctxTempDaily = tempElementDaily.getContext('2d');
-
-        var configTempDaily = {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [{
-                    label: 'Temperature',
-                    borderColor: window.chartColors.yellow,
-                    backgroundColor: window.chartColors.yellow,
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor()
-                    ],
-                }]
-            },
-            options: {
-                responsive: true,
-                tooltips: {
-                    mode: 'index',
-                },
-                hover: {
-                    mode: 'index'
-                },
-                scales: {
-                    xAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Month'
-                        }
-                    }],
-                    yAxes: [{
-                        stacked: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Value'
-                        }
-                    }]
-                }
-            }
-        };
-
-        window.myLine = new Chart(ctxTempDaily, configTempDaily);
-    }
-
-    if(waterElementDaily != null)
-    {
-        var ctxWaterDaily = waterElementDaily.getContext('2d');
-
-        var configWaterDaily = {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [{
-                    label: 'Water Consumption',
-                    borderColor: window.chartColors.blue,
-                    backgroundColor: window.chartColors.blue,
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor()
-                    ],
-                }]
-            },
-            options: {
-                responsive: true,
-                tooltips: {
-                    mode: 'index',
-                },
-                hover: {
-                    mode: 'index'
-                },
-                scales: {
-                    xAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Month'
-                        }
-                    }],
-                    yAxes: [{
-                        stacked: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Value'
-                        }
-                    }]
-                }
-            }
-        };
-
-        window.myLine = new Chart(ctxWaterDaily, configWaterDaily);
-    }
+    
 
     /***************************************************************/
     //                      Live Charts
@@ -325,7 +157,7 @@ window.onload = function () {
 
         var configCarbonLive = {
             type: 'line',
-            options: liveChartOptions
+            options: chartOptions
         };
         
         var carbonChart = new Chart(ctxCarbonLive, configCarbonLive);
@@ -363,7 +195,7 @@ window.onload = function () {
 
         var configPowerLive = {
             type: 'line',
-            options: liveChartOptions
+            options: chartOptions
         };
         
         var powerChart = new Chart(ctxPowerLive, configPowerLive);
@@ -401,7 +233,7 @@ window.onload = function () {
 
         var configHumidityLive = {
             type: 'line',
-            options: liveChartOptions
+            options: chartOptions
         };
         
         var humidityChart = new Chart(ctxHumidityLive, configHumidityLive);
@@ -438,7 +270,7 @@ window.onload = function () {
 
         var configTempLive = {
             type: 'line',
-            options: liveChartOptions
+            options: chartOptions
         };
         
         var tempChart = new Chart(ctxTempLive, configTempLive);
