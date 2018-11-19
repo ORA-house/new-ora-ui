@@ -29,6 +29,17 @@
     min-height: 100%;
 }
 
+#notes-bg {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-image: url('../css/assets/imgs/note-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 b {
     font-family: 'AvenirBlack', sans-serif;
 }
@@ -66,7 +77,7 @@ h2 {
     font-size: 9vh;
 }
 
-.white-header{
+.white-header {
     color: white;
 }
 
@@ -233,21 +244,33 @@ body {
     cursor: pointer;
 }
 
-.footer > div {
+.footer>div {
     z-index: 1;
 }
 
-.footer .right {
+.footer .right,
+.footer .left,
+.footer .center {
     position: absolute;
-    right: 3vw;
     bottom: 3vh;
+}
+
+.footer .right {
+    right: 3vw;
     text-align: right;
 }
 
 .footer .left {
-    position: absolute;
     left: 0;
-    bottom: 3vh;
+}
+
+.footer .center {
+    left: calc(50% - 2em);
+    bottom: 5vh;
+}
+
+.footer .center .smiley>i {
+    font-size: 4em;
 }
 
 .footer .weather i {

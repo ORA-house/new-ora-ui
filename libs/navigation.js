@@ -6,6 +6,10 @@ $('#stat-nav').click(function () {
     window.location.replace('stats.html');
 });
 
+$('#notes-nav').click(function () {
+    window.location.replace('notes.html');
+});
+
 $('#mBed-op').click(function () {
     window.location.replace('rooms/master-bedroom.html');
 });
