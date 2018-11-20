@@ -34,6 +34,10 @@ $('.backToControls').click(function () {
     window.location.replace('../control.html');
 });
 
+$('#notes-nav').click(function () {
+    window.location.replace('notes.html');
+});
+
 $('#yt-icon').click(function () {
     window.location.replace('https://www.youtube.com');
 });
