@@ -400,3 +400,20 @@ input:checked+.slider:before {
     position: absolute;
     right: 0;
 }
+.ent-image{
+  padding-top:10%;
+  margin: 1% 1% 1% 1%;
+  background-repeat:no-repeat;
+}
+.round{
+  border-radius: 60%;
+  border: 2px solid black;
+  margin: 1% 1% 1% 6%;
+}
+.img-size{
+  padding-top:45%;
+  width:42%;
+  background-color: white;
+  background-position: center;
+  background-repeat:no-repeat;
+}
