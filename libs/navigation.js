@@ -2,10 +2,6 @@ $('#control-nav').click(function () {
     window.location.replace('control.html');
 });
 
-$('#notes-nav').click(function () {
-    window.location.replace('notes.html');
-});
-
 $('#mBed-op').click(function () {
     window.location.replace('rooms/master-bedroom.html');
 });
@@ -36,4 +32,27 @@ $('.backToMain').click(function () {
 
 $('.backToControls').click(function () {
     window.location.replace('../control.html');
+});
+
+$('#yt-icon').click(function () {
+    window.location.replace('https://www.youtube.com');
+});
+
+$('#pd-icon').click(function () {
+    window.location.replace('https://www.pandora.com/');
+});
+$('#hulu-icon').click(function () {
+    window.location.replace('https://www.hulu.com/');
+});
+$('#netf-icon').click(function () {
+    window.location.replace('https://www.netflix.com/');
+});
+$('#spfy-icon').click(function () {
+    window.location.replace('https://www.spotify.com');
+});
+$('#wb-icon').click(function () {
+    window.location.replace('https://www.google.com');
+});
+$('#music-icon').click(function () {
+    window.location.replace('https://soundcloud.com/');
 });
