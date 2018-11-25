@@ -2,6 +2,15 @@ $('#control-nav').click(function () {
     window.location.replace('control.html');
 });
 
+
+$('#notes-nav').click(function () {
+    window.location.replace('notes.html');
+});
+
+$('#media-nav').click(function () {
+    window.location.replace('media.html');
+});
+
 $('#mBed-op').click(function () {
     window.location.replace('rooms/master-bedroom.html');
 });
@@ -32,10 +41,6 @@ $('.backToMain').click(function () {
 
 $('.backToControls').click(function () {
     window.location.replace('../control.html');
-});
-
-$('#notes-nav').click(function () {
-    window.location.replace('notes.html');
 });
 
 $('#yt-icon').click(function () {
