@@ -68,6 +68,16 @@
     <script src="../libs/navigation.js"></script>
     <script src="../libs/animation.js"></script>
     <script src="../libs/footer.js"></script>
+    <script>
+        function getWeather()
+        {
+            $.get("/getTemp", function(data){
+                document.getElementById('temperature').value = data.tempc;
+                console.log(data);
+            });
+        }
+        setInterval(getWeather,60000);
+    </script>
 </body>
 
 </html>

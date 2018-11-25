@@ -44,6 +44,11 @@ b {
     font-family: 'AvenirBlack', sans-serif;
 }
 
+.white{
+    color: #3c3c3c;
+    background-color: white;    
+}
+
 .grey {
     color: white;
     background-color: #3c3c3c;
@@ -216,6 +221,7 @@ body {
 .content-body>.row,
 .card {
     margin: auto;
+    margin-left: -2vh;
 }
 
 .room-container {
@@ -400,6 +406,7 @@ input:checked+.slider:before {
     position: absolute;
     right: 0;
 }
+
 .ent-image{
   padding-top:10%;
   margin: 1% 1% 1% 1%;
@@ -416,4 +423,17 @@ input:checked+.slider:before {
   background-color: white;
   background-position: center;
   background-repeat:no-repeat;
+}
+
+.chart-container span, .chart-container span > b {
+    font-size: 4vh;
+}
+
+.chart-container span > b {
+    font-family: 'AvenirBlack', sans-serif;
+}
+
+.chart-container .chart {
+    max-height: 50vh !important;
+    margin: auto;
 }

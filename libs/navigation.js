@@ -2,13 +2,16 @@ $('#control-nav').click(function () {
     window.location.replace('control.html');
 });
 
-
 $('#notes-nav').click(function () {
     window.location.replace('notes.html');
 });
 
 $('#media-nav').click(function () {
     window.location.replace('media.html');
+});
+
+$('#stat-nav').click(function () {
+    window.location.replace('stats.html');
 });
 
 $('#mBed-op').click(function () {
