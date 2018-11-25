@@ -28,6 +28,20 @@
     filter: blur(10px);
 }
 
+.start-txt {
+    top: calc(50% - 1.5vh);
+    position: absolute;
+    left: 4vh;
+    animation: flash ease-in-out 2s infinite;
+    animation-delay: 1s;
+}
+
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: .1; }
+    100% { opacity: 1; }
+}
+
 #welcome {
     font-family: 'AvenirBlack', sans-serif;
     display: block;

@@ -4,6 +4,7 @@ $('#menu').click(function () {
 });
 
 $('#login').click(function() {
+  $('.start-txt').css('display', 'none');
   detectFace();
   $('#home-vid').toggleClass('login-bg');
 });
