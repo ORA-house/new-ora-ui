@@ -87,10 +87,10 @@
                     context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
                     context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
                     // console.log(count);
-                    if (count > 30) {
+                    if (count > 10) {
                         document.getElementById('welcome').innerHTML = "WELCOME BACK";
                         count++;
-                        if(count > 40){
+                        if(count > 20){
                             window.location.replace("home.html");
                             context = "";
                         }
