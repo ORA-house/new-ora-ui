@@ -62,7 +62,7 @@ var configElectrical = {
     data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-            label: 'Carbon',
+            label: 'Electricity',
             borderColor: window.chartColors.green,
             backgroundColor: window.chartColors.green,
             data: [
@@ -107,7 +107,7 @@ var configHumidity = {
     data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-            label: 'Carbon',
+            label: 'Humidity',
             borderColor: window.chartColors.grey,
             backgroundColor: window.chartColors.grey,
             data: [
@@ -152,7 +152,7 @@ var configTemp = {
     data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-            label: 'Carbon',
+            label: 'Temperature',
             borderColor: window.chartColors.yellow,
             backgroundColor: window.chartColors.yellow,
             data: [
@@ -197,7 +197,7 @@ var configWater = {
     data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-            label: 'Carbon',
+            label: 'Water',
             borderColor: window.chartColors.blue,
             backgroundColor: window.chartColors.blue,
             data: [
