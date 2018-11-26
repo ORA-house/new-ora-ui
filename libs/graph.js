@@ -29,11 +29,11 @@ var configCarbon = {
                 randomScalingFactor(),
                 randomScalingFactor()
             ],
-        }]
-    },
-    options: {
+        }],
+        options: {
         responsive: true,
         tooltips: {
+        },
             mode: 'index',
         },
         hover: {
@@ -62,7 +62,7 @@ var configElectrical = {
     data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-            label: 'Electricity',
+            label: 'Electricity Consumption',
             borderColor: window.chartColors.green,
             backgroundColor: window.chartColors.green,
             data: [
@@ -107,7 +107,7 @@ var configHumidity = {
     data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-            label: 'Humidity',
+            label: 'Humidity Level',
             borderColor: window.chartColors.grey,
             backgroundColor: window.chartColors.grey,
             data: [
@@ -197,7 +197,7 @@ var configWater = {
     data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-            label: 'Water',
+            label: 'Water Consumption',
             borderColor: window.chartColors.blue,
             backgroundColor: window.chartColors.blue,
             data: [

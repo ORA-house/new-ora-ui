@@ -39,7 +39,7 @@ $('#car-op').click(function () {
 });
 
 $('.backToMain').click(function () {
-    window.location.replace('home.html');
+    window.location.replace('login.html');
 });
 
 $('.backToControls').click(function () {
