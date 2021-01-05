@@ -2,6 +2,10 @@ $('#control-nav').click(function () {
     window.location.replace('control.html');
 });
 
+$('#stat-nav').click(function () {
+    window.location.replace('stats.html');
+});
+
 $('#notes-nav').click(function () {
     window.location.replace('notes.html');
 });
@@ -36,4 +40,20 @@ $('.backToMain').click(function () {
 
 $('.backToControls').click(function () {
     window.location.replace('../control.html');
+});
+
+$('#carbonChartDaily').click(function () {
+    window.location.replace('carbonStats.html');
+});
+
+$('#powerChartDaily').click(function () {
+    window.location.replace('electricityStats.html');
+});
+
+$('#humidityChartDaily').click(function () {
+    window.location.replace('humidityStats.html');
+});
+
+$('#tempChartDaily').click(function () {
+    window.location.replace('tempStats.html');
 });

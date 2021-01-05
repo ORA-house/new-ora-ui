@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ORA UI </title>
+    <link href="../libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../libs/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/magen-iot-admin.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/oraui.css">
+
+    <script src="../libs/chartjs/dist/Chart.js"></script> 
+    <script src="../libs/chartjs/dist/Chart.min.js"></script> 
+    <script src="../libs/chartjs/dist/Chart.bundle.js"></script> 
+    <script src="../libs/chartjs/dist/Chart.bundle.min.js"></script>  
+</head>
+
+<body class="bright">
+
+    <button id="back" class="backToMain">
+        <i class="fa fa-chevron-circle-left"></i>
+    </button>
+
+    <div class="content col">
+
+        <!-- header content -->
+        <!-- includes headings, info button -->
+        <div class="header row">
+            <button id="help-info">
+                <i class="icon ion-ios-information-outline"></i>
+            </button>
+
+            <h2>POWER</h2>
+            <!-- description of page -->
+            <div class="desc">
+                A more in-depth analysis of the power consumption of the house
+            </div>
+        </div>
+
+        <!-- main content -->
+        <!-- includes content of page for users to interact with -->
+        <div class="content-body row">
+            <div class="col chart-container">
+                <div class="row">
+                    <canvas class="chart" id="powerChartLive"></canvas>
+                    <div class="graph-text">Live Reading...</div>
+                </div>
+                <div class="row">
+                    <canvas class="chart-small" id="powerChartDaily"></canvas>
+                    <div class="graph-text">Daily Overview</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer content -->
+    <!-- includes time, weather, house performance -->
+    <div class="footer row">
+        <div class="left">
+            <div class="weather">
+                <i class="icon ion-ios-sunny-outline"></i>
+            </div>
+            <div id="temperature"><span id="temperature-value"></span>&deg;<b>C</b></div>
+        </div>
+        <div class="right">
+            <div id="time"></div>
+            <div id="date"></div>
+            <div id="day"></div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="../libs/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../libs/functions.js"></script>
+    <script src="../libs/graph.js"></script>
+    <script src="../libs/navigation.js"></script>
+    <script src="../libs/footer.js"></script>
+    <script src="../libs/control.js"></script>
+    <script src="../libs/weather.js"></script>
+</body>
+
+</html>

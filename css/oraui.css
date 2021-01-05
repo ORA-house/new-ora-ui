@@ -44,6 +44,11 @@ b {
     font-family: 'AvenirBlack', sans-serif;
 }
 
+.white{
+    color: #3c3c3c;
+    background-color: white;    
+}
+
 .grey {
     color: white;
     background-color: #3c3c3c;
@@ -399,4 +404,30 @@ input:checked+.slider:before {
     margin-left: .5vh;
     position: absolute;
     right: 0;
+}
+
+.chart-container span, .chart-container span > b {
+    font-size: 4vh;
+}
+
+.chart-container span > b {
+    font-family: 'AvenirBlack', sans-serif;
+}
+
+.chart-container .chart {
+    max-height: 50vh !important;
+    margin: auto;
+}
+
+.chart-container .row .graph-text {
+    width: 100%;
+    text-align: right;
+    padding-bottom: 20px;
+}
+
+.chart-container .chart-small {
+    max-width: 25vh !important;
+    position: relative;
+    right: 0;
+    padding: 10px;
 }
